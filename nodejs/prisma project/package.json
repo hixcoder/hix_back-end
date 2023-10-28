@@ -9,9 +9,9 @@
   "scripts": {
     "prisdev": "npx prisma migrate dev",
     "db:dev:rm": "docker compose rm -s -f -v",
-    "db:dev:up": "docker compose up dev-db -d",
+    "db:dev:up": "docker compose up postgres -d",
     "db:dev:restart": "npm run db:dev:rm && npm run db:dev:up",
-    "r": "npm run db:dev:restart && npm run prisma:dev:deploy",
+    "r": "npm run db:dev:restart ",
     "s": "nodemon script.ts"
   },
   "dependencies": {
