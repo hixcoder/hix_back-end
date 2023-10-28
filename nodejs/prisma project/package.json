@@ -1,0 +1,20 @@
+{
+  "devDependencies": {
+    "@types/node": "^20.8.9",
+    "nodemon": "^3.0.1",
+    "prisma": "^5.5.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "prisdev": "npx prisma migrate dev",
+    "db:dev:rm": "docker compose rm -s -f -v",
+    "db:dev:up": "docker compose up dev-db -d",
+    "db:dev:restart": "npm run db:dev:rm && npm run db:dev:up",
+    "r": "npm run db:dev:restart && npm run prisma:dev:deploy",
+    "s": "nodemon script.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.5.2"
+  }
+}
